@@ -1,0 +1,13 @@
+#!/bin/bash
+# timeTBrun
+# Stop on errors
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+# Sanity check command line options
+usage() {
+  echo "Usage: ./bin/timeTBrun"
+}
+
+export FLASK_ENV=development
+export FLASK_APP=timeTB
+flask run --host 127.0.0.1 --port 5000
